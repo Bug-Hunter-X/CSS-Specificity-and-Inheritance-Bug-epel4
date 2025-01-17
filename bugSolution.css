@@ -1,0 +1,25 @@
+The solution involves understanding CSS specificity and ensuring the desired styles override others. Here's the corrected code:
+
+```css
+.parent {
+  color: blue; 
+}
+
+.child {
+  color: red; 
+}
+
+.parent .child {
+  color: green; /* This style is intended to override the color of .child */
+}
+
+.child.special {
+  color: purple !important; /*Use !important to ensure this style takes precedence*/
+}
+
+<div class="parent">
+  <div class="child special"></div>
+</div>
+```
+
+Using `!important` is generally discouraged for maintainability, but in certain scenarios where overriding inherent styles is crucial, it may be acceptable.  A better approach often involves restructuring the CSS selectors to ensure higher specificity without the need for `!important`.
