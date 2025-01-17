@@ -1,0 +1,23 @@
+The following CSS code snippet demonstrates an issue with specificity and inheritance where the expected styling isn't applied correctly: 
+
+```css
+.parent {
+  color: blue; 
+}
+
+.child {
+  color: red; 
+}
+
+.parent .child {
+  color: green; /* This style is intended to override the color of .child */
+}
+
+.child.special {
+  color: purple; /*This style should override all previous styles*/
+}
+
+<div class="parent">
+  <div class="child special"></div>
+</div>
+```
